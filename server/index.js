@@ -9,7 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 
-/*CONFIGS*/
+/*CONFIGURATIONS*/
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, 'public/assets')));
 
-/*STORAGE*/
+/*FILE STORAGE*/
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'public/assets');
@@ -34,6 +34,8 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({storage});
+
+
 
 /*MONGOOSE SETUP*/
 const PORT = process.env.PORT || 6001;
