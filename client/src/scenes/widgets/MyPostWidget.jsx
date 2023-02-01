@@ -23,7 +23,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
-import UserImage from "components/UserImage";
+import UserImage from "components/UserImage.jsx";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
